@@ -95,12 +95,12 @@ export function InitializePluralRules (pluralRules, locales, options) {
     opt['[[localeMatcher]]'] = matcher;
 
     // 11. Perform ? SetNumberFormatOptions(pluralRules, options, 0).
-    SetNumberFormatDigitOptions(internals, options, 0);
+    SetNumberFormatDigitOptions(internal, options, 0);
 
     // 12. If pluralRules.[[maximumFractionDigits]] is undefined, then
-    if (internals['[[maximumFractionDigits]]'] === undefined) {
+    if (internal['[[maximumFractionDigits]]'] === undefined) {
         // a. Set pluralRules.[[maximumFractionDigits]] to max(pluralRules.[[minimumFractionDigits]], 3).
-        internals['[[maximumFractionDigits]]'] = Math.max(internals['[[minimumFractionDigits]]'], 3);
+        internal['[[maximumFractionDigits]]'] = Math.max(internal['[[minimumFractionDigits]]'], 3);
     }
 
     let localeData = internals.PluralRules['[[localeData]]'];
